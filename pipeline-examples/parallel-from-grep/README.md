@@ -12,11 +12,12 @@ circumstances.
 * Due to limitations in Workflow - i.e.,
 [JENKINS-26481](https://issues.jenkins-ci.org/browse/JENKINS-26481) -
 it's not really possible to use Groovy closures or syntax that depends
-on closures, so you can't do the Groovy standard of using
-.collectEntries on a list and generating the steps as values for the
-resulting entries. You also can't use the standard Java syntax for For
-loops - i.e., "for (String s: strings)" - and instead have to use old
-school counter-based for loops.
+on closures, except groovy enumerators ```.each```, so you can't do the Groovy 
+standard of using .collectEntries on a list and generating the steps 
+as values for the resulting entries. You also can't use the standard 
+Java syntax for For loops - i.e., ```for (String s: strings)``` - and 
+instead have to use old school counter-based for loops. It was implemented in
+[JENKINS-26481](https://issues.jenkins-ci.org/browse/JENKINS-27421)
 * There is no need for the generation of the step itself to be in a
 separate method. I've opted to do so here to show how to return a step
 closure from a method.
